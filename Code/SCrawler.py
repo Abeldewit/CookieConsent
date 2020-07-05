@@ -15,7 +15,7 @@ from threading import Lock
 import http
 
 # Global settings
-HEADLESS = False
+HEADLESS = True
 RESET = False
 HEAD_WAIT = 15
 
