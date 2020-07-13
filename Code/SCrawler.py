@@ -236,7 +236,7 @@ def crawler():
             p_df = df[mask]
             index_list = list(p_df.index)
 
-        # random.shuffle(index_list)
+        random.shuffle(index_list)
         target = web_opener
 
     elif method == '3':
@@ -277,7 +277,7 @@ def web_opener(index):
 
         # See if it is already done in earlier runs
         if (this_site['cookie_second'] != {}) & HEADLESS:
-            print(website, 'already done')
+            # print(website, 'already done')
             return 0
         if not HEADLESS:
             print(website+':')
