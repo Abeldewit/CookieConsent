@@ -19,12 +19,14 @@ from threading import Lock
 import http
 from bs4 import BeautifulSoup
 import itertools
+import errno
+from datetime import datetime
 
 # Global settings
 HEADLESS = True
 RESET = False
 SHUFFLE = True
-HEAD_WAIT = 15
+HEAD_WAIT = 23
 
 _TOOFILE = False
 
@@ -34,13 +36,12 @@ data_lock = Lock()
 # Load the DataFrame
 df = pd.read_csv('assets/DataFrame.csv', converters={"Host": literal_eval,
                                                      "cookie_first": literal_eval,
-                                                     "cookie_second": literal_eval
+                                                     "cookie_accept": literal_eval,
+                                                     "cookie_decline": literal_eval
                                                      })
-options_df = []
 
 # # DF RESET # #
 if RESET:
-    df = df.drop(['Host checked'], axis=1)
     df['banner_provider'] = ["" for _ in range(len(df))]
     df['options_available'] = False
     df['cookie_first'] = [{} for _ in range(len(df))]
@@ -48,9 +49,10 @@ if RESET:
     df['cookie_decline'] = [{} for _ in range(len(df))]
     df['click_found_a'] = False
     df['click_found_d'] = False
+    df['done'] = False
 
-    cols = ['Website', 'Host', 'banner_provider', 'options_available',
-            'click_found_a', 'cookie_accept', 'click_found_b', 'cookie_decline'
+    cols = ['Website', 'Host', 'banner_provider', 'options_available', 'cookie_first',
+            'click_found_a', 'cookie_accept', 'click_found_d', 'cookie_decline', 'done'
             ]
     df = df[cols]
 
@@ -59,6 +61,14 @@ if RESET:
 providers = ['squarespace', 'wix', 'weebly', 'jimdo', 'shopify',
              'bigcommerce', 'webnode', 'wordpress', 'medium-com',
              'Sitebuilder', 'joomla']
+
+languages = {}
+alpha = 'abcdefghijklmnopqrstuvwxyz'
+for i in range(len(alpha)):
+    for j in range(len(alpha)):
+        lan_1 = alpha[i] + alpha[j]
+        lan_2 = 'en'
+        languages[lan_1] = lan_2
 
 
 # Mainly for debugging, this method highlights the element passed, with the color passed
@@ -181,7 +191,7 @@ def find_links(search_element, search_words, s_all, website):
 
 
 # Search for a button that is clickable, but doesn't lead to another website
-def button_search(search_element, website, a_d):
+def button_search(search_element, website):
     if not HEADLESS:
         print("Button search")
 
@@ -225,12 +235,10 @@ def button_search(search_element, website, a_d):
     options_list = xpath_search_words(search_element, options_words)
 
     # Check for all links in the element (and whether they link away from the current url)
-    if a_d:
-        if len(accept_list) == 0:
-            accept_list.extend(find_links(search_element, accept_words, True, website))
-    else:
-        if len(decline_list) == 0:
-            decline_list.extend(find_links(search_element, decline_words, False, website))
+    if len(accept_list) == 0:
+        accept_list.extend(find_links(search_element, accept_words, True, website))
+    elif len(decline_list) == 0:
+        decline_list.extend(find_links(search_element, decline_words, False, website))
 
     # See if they provide options or if you consent by using the website already
     use_consent_list = ['using our website, you agree', 'use our site you consent', 'by continuing to browse']
@@ -252,48 +260,6 @@ def button_search(search_element, website, a_d):
         print('decl:', print_decl)
 
     return accept_list, options_list, decline_list
-
-
-# Function for clicking different options
-def choose_options(driver, button_text):
-    url = driver.current_url
-    url = url.split('://')[1]
-    url = "https://" + url.split('/')[0]
-    print(url)
-
-    box_xpath = '//input[@type = "checkbox"]'
-    check_len = len(driver.find_elements_by_xpath(box_xpath))
-
-    for i in range(check_len+1):
-        if i != 0:
-            driver.get(url)
-            driver.implicitly_wait(2)
-            settings = driver.find_elements_by_xpath("//*[contains(text(), '{}')]".format(button_text))
-            if len(settings) != 0:
-                click_element(driver, settings[0])
-            else:
-                continue
-
-        box_xpath = '//input[@type = "checkbox"]'
-        checkboxes = driver.find_elements_by_xpath(box_xpath)
-        check_list = []
-
-        for n, c in enumerate(checkboxes):
-            print(i, n)
-            if i == check_len:
-                if c.get_attribute("checked") != 'checked':
-                    click_element(driver, c)
-            if n == i:
-                if c.get_attribute("checked") != 'checked':
-                    click_element(driver, c)
-            else:
-                if c.get_attribute("checked") == 'checked':
-                    click_element(driver, c)
-        time.sleep(2)
-        save = driver.find_element_by_xpath("//*[contains(text(), 'Save Settings')]")
-        click_element(driver, save)
-        print(i, driver.get_cookies())
-    return False
 
 
 # Try to click the WebElement passed
@@ -388,15 +354,6 @@ def crawler():
                 random.shuffle(index_list)
             target = web_opener
 
-        elif method == '3':
-            print("Provider: ", end='')
-            provider = input()
-
-            mask = df['Host'].apply(lambda x: provider in x)
-            p_df = df[mask]
-            index_list = list(p_df.index)
-            target = extension_opener
-
         else:
             print("Not a valid method")
             exit(1)
@@ -411,17 +368,19 @@ def crawler():
 
     for index in index_list:
         while threading.active_count() > HEAD_WAIT:
-            time.sleep(2)
+            time.sleep(5)
         if _TOOFILE:
             print("TOO MANY FILES")
             time.sleep(30)
-            restart_program()
-        t = threading.Thread(target=target, args=(index, True,), daemon=True)
-        t2 = threading.Thread(target=target, args=(index, False,), daemon=True)
+            restart_program(thread_list)
+            break
+        t = threading.Thread(target=target, args=(index,), daemon=True)
         t.start()
-        t2.start()
         thread_list.append(t)
-        thread_list.append(t2)
+
+        # t2 = threading.Thread(target=target, args=(index, False,), daemon=True)
+        # t2.start()
+        # thread_list.append(t2)
 
         if not HEADLESS:
             t.join()
@@ -431,7 +390,7 @@ def crawler():
             t.join()
 
 
-def parent_search(driver, element, a_d):
+def parent_search(driver, element):
     accept_list = {}
     options_list = {}
     decline_list = {}
@@ -457,7 +416,7 @@ def parent_search(driver, element, a_d):
             highlight(iter_element, 'yellow')
 
         # Find possible buttons
-        accept_list_t, options_list_t, decline_list_t = button_search(iter_element, driver.current_url, a_d)
+        accept_list_t, options_list_t, decline_list_t = button_search(iter_element, driver.current_url)
 
         # If the new button is not in any list yet, we add it
         for button in accept_list_t:
@@ -481,177 +440,77 @@ def parent_search(driver, element, a_d):
         # print('a', [a.text for a in accept_list[level]])
         # print('o', [a.text for a in options_list[level]])
 
-        if a_d:
-            find_list = accept_list
-        elif not a_d:
-            find_list = decline_list
-
-        if len(find_list[level]) > 0 & len(options_list) > 0:
+        if len(accept_list[level]) > 0 & len(options_list) > 0:
             break
         if level > 2:
-            if len(find_list[level]) > 0:
+            if len(accept_list[level]) > 0:
                 if (len(options_list[level-1]) >= len(options_list[level])) \
-                        & (len(find_list[level-1]) >= len(find_list[level])):
+                        & (len(accept_list[level-1]) >= len(accept_list[level])):
                     del accept_list[level], options_list[level], decline_list[level]
                     break
 
     return accept_list, options_list, decline_list
 
 
-def get_true_text(element):
-    text = element.text.strip()
-    children = element.find_elements_by_xpath('./*')
-    for child in children:
-        text = text.replace(child.text, '').strip()
-    return text
-
-
-# This function will interact with the onetrust popup and choose all the different options
-# def onetrust_interact(driver):
-#     url = driver.current_url
-#     level = 0
-#     cookie_options = {}
-#     while True:
-#         if level != 0:
-#             driver.get(url)
-#             driver.implicitly_wait(2)
-#         settings = driver.find_element_by_xpath('//button[contains(text(), "Settings")]')
-#         time.sleep(2)
-#         if click_element(driver, settings):
-#             menu_buttons = driver.find_elements_by_xpath('//ul[@id = "optanon-menu"]/li//button')
-#             not_included = ['Your Privacy', 'Strictly Necessary Cookies']
-#             menu_buttons = [b for b in menu_buttons if b.text not in not_included]
-#             opt_names = []
-#
-#             for opt in range(len(menu_buttons)):
-#                 if click_element(driver, menu_buttons[opt]):
-#                     checkbox = driver.find_element_by_xpath(
-#                         '//div[@class = "vendor-header-container"]//input[@type = "checkbox"]')
-#                     label = driver.find_element_by_xpath('//div[@class = "optanon-status-editable"]//label')
-#                     label = get_true_text(label)
-#                     name = driver.find_element_by_class_name("header-3").text.strip()
-#
-#                     # Having just one on
-#                     if level < len(menu_buttons):
-#                         if opt != level:
-#                             if label == 'Active':
-#                                 click_element(driver, checkbox)
-#                         elif opt == level:
-#                             opt_names.append(name)
-#                             if label == 'Inactive':
-#                                 click_element(driver, checkbox)
-#
-#                     # Have everything on on
-#                     elif level == len(menu_buttons):
-#                         opt_names.append(name)
-#                         if label == 'Inactive':
-#                             click_element(driver, checkbox)
-#
-#                     elif level > len(menu_buttons):
-#                         opt_names = ['All Off']
-#                         if label == 'Active':
-#                             click_element(driver, checkbox)
-#
-#             settings = driver.find_elements_by_xpath("//button[text() = 'Save Settings']")
-#             if len(settings) == 0:
-#                 settings = driver.find_elements_by_xpath("//button[contains(text(), 'Confirm')]")
-#             if len(settings) > 0:
-#                 click_element(driver, settings[0])
-#
-#             cookie_options[tuple(opt_names)] = driver.get_cookies()
-#
-#             if level == (len(menu_buttons)+1):
-#                 break
-#         level += 1
-#     print(cookie_options.keys())
-#     return cookie_options
-# def consensu_interact(driver, iframe):
-#     driver.switch_to.frame(iframe)
-#     url = driver.current_url
-#     print(url)
-#     level = 0
-#     cookie_options = {}
-#     while True:
-#         menu_items = driver.find_elements_by_xpath('//div[@class = "priv-purpose-container"]')
-#         for item in menu_items:
-#             name = item.find_element_by_xpath('.//div[@class = "purpose-title"]')
-#             switch = item.find_element_by_xpath('.//a')
-#             print(name, switch)
-#             on = switch.find_element_by_xpath('.//div[@class = "left"]')
-#             off = switch.find_element_by_xpath('.//div[@class = "right"]')
-#             print(name)
-#             click_element(driver, on)
-#         break
-#     return cookie_options
-##
-
-
 # Opening the web-page and searching for a button
-def web_opener(index, a_d):
+def web_opener(index):
+    global _TOOFILE
+    # Get the site by index
+    this_site = df.iloc[index]
+    website = this_site['Website']
+    current_time = datetime.now().strftime("%H:%M:%S")
+
+    # See if it is already done in earlier runs
+    if (this_site['click_found_a']) & HEADLESS:
+        # print(website, 'already done')
+        return 0
+
+    if not HEADLESS:
+        print(website + ':')
+
+    # Setting chrome options
+    options = Options()
+    options.add_argument("--lang=en")
+
+    if HEADLESS:
+        options.add_argument("--headless")
+    options.binary_location = '/Users/abel/Documents/School/Year 3/Semester 2/Thesis/Chrome/' \
+                              'Google Chrome.app/Contents/MacOS/Google Chrome'
+
+    prefs = {
+        "translate_whitelists": languages,
+        "translate": {"enabled": "true"}
+    }
+    options.add_experimental_option("prefs", prefs)
     try:
-        # Get the site by index
-        this_site = df.iloc[index]
-        website = this_site['Website']
-
-        # See if it is already done in earlier runs
-        if a_d:
-            if (this_site['cookie_accept'] != {}) & HEADLESS:
-                # print(website, 'already done')
-                return 0
-        else:
-            if (this_site['cookie_decline'] != {}) & HEADLESS:
-                return 0
-
-        # Skip over foreign websites
-        # non_en = ['cn', 'jp', 'mx', 'ua']
-        # if website[-2:] in non_en:
-        #     return 0
-
-        if not HEADLESS:
-            print(website+':')
-
-        # Setting chrome options
-        options = Options()
-        options.add_argument("--lang=en")
-
-        if HEADLESS:
-            options.add_argument("--headless")
-        options.binary_location = '/Users/abel/Documents/School/Year 3/Semester 2/Thesis/Chrome/' \
-                                  'Google Chrome.app/Contents/MacOS/Google Chrome'
-        alpha = 'abcdefghijklmnopqrstuvwxyz'
-        languages = {}
-        for i in range(len(alpha)):
-            for j in range(len(alpha)):
-                lan_1 = alpha[i] + alpha[j]
-                lan_2 = 'en'
-                languages[lan_1] = lan_2
-        prefs = {
-            "translate_whitelists": languages,
-            "translate": {"enabled": "true"}
-        }
-        options.add_experimental_option("prefs", prefs)
         driver = webdriver.Chrome(executable_path='/usr/local/Caskroom/chromedriver/80.0.3987.106/chromedriver',
-                                  options=options)
+                                options=options)
+    except OSError as err:
+        if err.errno == errno.EMFILE:
+            with data_lock:
+                _TOOFILE = True
+                return -1
 
-        # Moving the screen to the second monitor
-        if not HEADLESS:
-            driver.set_window_size(1194, 834)
-            driver.set_window_position(-1194, 0)
+    # Moving the screen to the second monitor
+    if not HEADLESS:
+        driver.set_window_size(1194, 834)
+        driver.set_window_position(-1194, 0)
 
-        # Loading the webpage
-        driver.get("https://" + website)
-        # driver.maximize_window()
-        driver.implicitly_wait(1)
+    # Loading the webpage
+    driver.get("https://" + website)
+    # driver.maximize_window()
+    driver.implicitly_wait(1)
 
-        # SSL problems with chrome
-        if "Your connection is not private" in driver.page_source:
-            driver.close()
-            return 1
-        # Other problems in chrome, these sites are untrustworthy
-        if "This site can't" in driver.page_source:
-            driver.close()
-            return 1
+    # SSL problems with chrome
+    if "Your connection is not private" in driver.page_source:
+        driver.close()
+        return 1
+    # Other problems in chrome, these sites are untrustworthy
+    if "This site can't" in driver.page_source:
+        driver.close()
+        return 1
 
+    try:
         # Getting the first initial cookie and save it (or print it)
         cookies = driver.get_cookies()
         with data_lock:
@@ -674,30 +533,23 @@ def web_opener(index, a_d):
         # Cybot cookie
         cybotcookiebot = driver.find_elements_by_id("CybotCookiebotDialogBody")
         if len(trustarc) != 0:
-            print("Found trustarc")
+            #print("Found trustarc")
             with data_lock:
                 df.at[index, 'banner_provider'] = "TrustArc"
                 df.at[index, 'options_available'] = True
             # TODO Interact with trustarc popup
 
         elif len(onetrust) != 0:
-            onetrust = onetrust[0]
-            print("Found OneTrust")
             with data_lock:
                 df.at[index, 'banner_provider'] = "OneTrust"
                 df.at[index, 'options_available'] = True
-            #cookie_dict = onetrust_interact(driver)
-            # if HEADLESS:
-            #     with data_lock:
-            #         df.at[index, 'cookie_second'] = cookie_dict
-            #         df.at[index, 'banner_provider'] = 'OneTrust'
+
             return 0
 
         elif len(cybotcookiebot) != 0:
             with data_lock:
                 df.at[index, 'banner_provider'] = "Cybot"
                 df.at[index, 'options_available'] = True
-            print("Found Cybot")
 
         # If the text 'cookie' appears somewhere in the page's source code
         if "cookie" in driver.page_source:
@@ -732,12 +584,9 @@ def web_opener(index, a_d):
             elif HEADLESS:
                 if len(cookie_text) == 0:
                     with data_lock:
-                        if a_d:
-                            df.at[index, 'click_found_a'] = False
-                            df.at[index, 'cookie_accept'] = [None]
-                        else:
-                            df.at[index, 'click_found_b'] = False
-                            df.at[index, 'cookie_decline'] = [None]
+                        df.at[index, 'click_found_a'] = False
+                        df.at[index, 'cookie_accept'] = [None]
+
                         driver.close()
                         driver.quit()
                         return 1
@@ -760,26 +609,13 @@ def web_opener(index, a_d):
                                 with data_lock:
                                     df.at[index, 'banner_provider'] = "Unknown"
                                     df.at[index, 'options_available'] = True
-                    if clicked:
-                        break
-                    else:
-                        continue
 
-            driver.refresh()
-            driver.implicitly_wait(2)
-            for element in list(cookie_text):
+                button_list = accept_list
 
-                accept_list, options_list, decline_list = parent_search(driver, element)
-
-                if a_d:
-                    button_list = accept_list
-                else:
-                    button_list = decline_list
-
-                for i in range(1, len(button_list)+1):
-                    if len(button_list[i]) > 0 & (not clicked):
+                for n in range(1, len(button_list)+1):
+                    if len(button_list[n]) > 0 & (not clicked):
                         # ...try to click them
-                        for button in button_list[i]:
+                        for button in button_list[n]:
                             if not HEADLESS:
                                 # ...and show them
                                 highlight(button, 'green')
@@ -806,20 +642,6 @@ def web_opener(index, a_d):
 
                 # TODO think about multiple click cookie walls (like the washingtonpost.com)
 
-            # Save whether buttons were found
-            if HEADLESS:
-                with data_lock:
-                    if clicked:
-                        if a_d:
-                            df.at[index, 'click_found_a'] = True
-                        else:
-                            df.at[index, 'click_found_d'] = True
-                    else:
-                        if a_d:
-                            df.at[index, 'click_found_a'] = False
-                        else:
-                            df.at[index, 'click_found_d'] = False
-
         # If none of these options work, there must simply not be a banner
         else:
             if not HEADLESS:
@@ -841,80 +663,49 @@ def web_opener(index, a_d):
 
         # Saving the new accepted cookies in the dataframe
         if HEADLESS:
-            if clicked:
+            with data_lock:
                 accepted_cookies = driver.get_cookies()
-                with data_lock:
+                if clicked:
                     if HEADLESS:
-                        if a_d:
-                            df.at[index, 'cookie_accept'] = accepted_cookies
-                        else:
-                            df.at[index, 'cookie_decline'] = accepted_cookies
+                        df.at[index, 'cookie_accept'] = accepted_cookies
+                        df.at[index, 'click_found_a'] = True
+
+                else:
+                    df.at[index, 'click_found_a'] = False
 
         driver.close()
         driver.quit()
-        print(website, ' done')
+
+        new_time = datetime.now().strftime("%H:%M:%S")
+        print(website, ' done', current_time, new_time)
+        with data_lock:
+            df.at[index, 'done'] = True
 
     # Both these exceptions are thrown when closing the program (and thus the connection, we can safely catch them)
     except urllib3.exceptions.ProtocolError:
+        driver.close()
+        driver.quit()
         return 0
     except http.client.RemoteDisconnected:
+        driver.close()
+        driver.quit()
         return 0
     except OSError as err:
         print("OS error: {0}".format(err))
-        if "too many files" in str(err).lower():
-            global _TOOFILE
-            _TOOFILE = True
-            return 1
-
-
-# Open a website in chrome with an extension loaded
-def extension_opener(index):
-    this_site = df.iloc[index]
-    website = this_site['Website']
-
-    print(website + ':')
-    options = Options()
-    options.add_argument("--lang=en")
-
-    if HEADLESS:
-        options.add_argument("--headless")
-    options.binary_location = '/Users/abel/Documents/School/Year 3/Semester 2/Thesis/Chrome/' \
-                              'Google Chrome.app/Contents/MacOS/Google Chrome'
-    driver = webdriver.Chrome(executable_path='/usr/local/Caskroom/chromedriver/80.0.3987.106/chromedriver',
-                              options=options)
-
-    driver.get("https://" + website)
-    driver.implicitly_wait(4)
-    cookies = driver.get_cookies()
-    print(cookies)
-
-    if not HEADLESS:
-        print("clicked: ", end='')
-        input()
-    print(driver.get_cookies())
-    driver.close()
-
-    options.add_extension('/Users/abel/Documents/School/Year 3/Semester 2/Thesis/Chrome/extension_3_1_8_0.crx')
-    driver = webdriver.Chrome(executable_path='/usr/local/Caskroom/chromedriver/80.0.3987.106/chromedriver',
-                              options=options)
-    driver.get("https://" + website)
-    driver.implicitly_wait(4)
-
-    cookies = driver.get_cookies()
-    print(cookies)
-    if not HEADLESS:
-        input()
-    driver.close()
+        print(err.errno)
+        if err.errno == errno.EBADF:
+            return -1
 
 
 def main():
-
+    global _TOOFILE
+    _TOOFILE = False
     crawler()
     print("Visited all the websites (unlikely)")
     df.to_csv('assets/DataFrame.csv', index=False)
 
 
-def restart_program():
+def restart_program(thread_list):
     """Restarts the current program, with file objects and descriptors
        cleanup
     """
@@ -926,8 +717,13 @@ def restart_program():
     except Exception as e:
         logging.error(e)
 
+    print('*'*20, 'RESTART', '*'*20)
+    global _TOOFILE
+    _TOOFILE = False
+    time.sleep(10)
     python = sys.executable
     os.execl(python, python, *sys.argv)
+    sys.exit(0)
 
 
 if __name__ == "__main__":
@@ -936,8 +732,10 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         df.to_csv('assets/DataFrame.csv', index=False)
         print('Interrupted')
-        print(df['options_available'].sum())
-        print(df['click_found'].sum())
+        print('accept:', df['click_found_a'].sum())
+        print('decline:', df['click_found_d'].sum())
+        print('options:', df['options_available'].sum())
+        print('done:', df['done'].sum())
         # restart_program()
         try:
             sys.exit(0)

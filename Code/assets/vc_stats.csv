@@ -1,325 +1,356 @@
 name,use,websites,hosts,first_party,third_party,persistent,life_span,session
+nid,Targeting/Advertising,39778,458,472,43395,43773,100726,94
 pref,Targeting/Advertising,53037,1289,1340,71329,71023,79302,1647
-akavpau_ppsd,Functionality,1185,1,1,1721,0,0,1722
-ts,Functionality,10641,91,99,11528,11524,50285,103
-x-pp-s,Functionality,618,1,1,654,0,0,655
-tsrce,Functionality,879,1,1,930,931,750790,0
+geoip,Functionality,208,106,191,145,107,269364,229
+_twitter_sess,Functionality,10721,3,28,10693,2,3652,10719
+guest_id,Targeting/Advertising,25412,276,292,25452,25728,664,16
+personalization_id,Targeting/Advertising,12657,6,8,12843,12842,1852,9
+lidc,Functionality,13891,10,20,14044,14064,212963,0
+bcookie,Targeting/Advertising,14909,96,122,15732,15852,93081,2
+bscookie,Targeting/Advertising,12791,6,10,12938,12948,116512,0
 lang,Functionality,26799,2358,2762,53039,3719,328722,52082
+jsessionid,Strictly Necessary,44663,24372,82368,39509,2009,512693,119868
+muid,Targeting/Advertising,19338,44,849,21063,21802,131550,110
+_ga,Performance,90755,86666,117805,35269,150262,35942,2812
+_gat,Performance,45025,37107,42976,14641,57591,2787908,26
+ss,Targeting/Advertising,3095,87,208,3200,2313,7884,1095
+_gid,Performance,89264,85136,105696,32997,138637,41055,56
+uaid,Functionality,194,19,132,75,163,54162,44
 _fbp,Targeting/Advertising,36186,28737,66271,7226,73442,14556,55
-_mkto_trk,Performance,4019,2651,3936,1652,4697,6351,891
-_gid,Performance,88880,84822,105266,32892,138102,41196,56
-_ga,Performance,90363,86347,117297,35167,149652,36056,2812
-_uetsid,Targeting/Advertising,6066,5152,6451,878,7313,502735,16
+__auc,Targeting/Advertising,1779,467,510,1401,1911,2062,0
+__asc,Targeting/Advertising,1752,466,510,1370,1880,485794,0
+countrycode,Functionality,739,573,5250,709,952,914554,5007
+akavpau_ppsd,Functionality,1189,1,1,1725,0,0,1726
+ts,Functionality,10641,91,99,11528,11524,50285,103
+x-pp-s,Functionality,621,1,1,657,0,0,658
+tsrce,Functionality,882,1,1,933,934,748174,0
+_pinterest_sess,Functionality,4488,16,16,4858,4873,204182,1
+csrftoken,Strictly Necessary,5669,1593,1663,10140,11297,1840315,506
+__lotl,Targeting/Advertising,177,166,176,3,179,172,0
+_lorid,Targeting/Advertising,167,161,167,2,169,0,0
+_lo_v,Functionality,181,166,177,7,184,353,0
+_mkto_trk,Performance,4027,2655,3944,1652,4705,6341,891
+_uetsid,Targeting/Advertising,6117,5183,6508,883,7375,499074,16
 _gcl_au,Targeting/Advertising,14672,11557,14811,1571,16360,17914,22
 __cfduid,Strictly Necessary,72480,33720,23607,166135,189708,229501,34
 __gads,Targeting/Advertising,10314,7435,9464,4429,13874,169808,19
-s_vi,Performance,17488,3906,4967,18613,23535,280686,45
-s_fid,Performance,3740,2579,7328,764,8055,10930,37
+s_fid,Performance,3748,2586,7336,764,8063,10919,37
 s_cc,Performance,13864,9408,15488,3685,3673,2843601,15500
 mbox,Performance,6300,4396,8080,1977,9710,20680,347
-liveagent_vc,Functionality,1150,1312,1400,1557,2957,21581,0
-liveagent_oref,Functionality,1141,1209,1398,815,2213,30280,0
-_gat,Performance,44861,36981,42814,14601,57389,2787908,26
+visitor_id,Targeting/Advertising,2767,3394,4218,4643,7936,55915,925
+liveagent_ptid,Functionality,1150,1207,1400,920,2320,28881,0
+liveagent_vc,Functionality,1159,1321,1408,1586,2994,21329,0
+liveagent_oref,Functionality,1149,1217,1406,830,2236,29954,0
+liveagent_sid,Functionality,1146,1205,1395,969,343,2914627,2021
+browserid,Functionality,1464,39,208,1438,1642,35816,4
 _gat_,Targeting/Advertising,28475,25017,33455,5306,38746,722514,15
-usprivacy,Strictly Necessary,484,307,379,516,735,5177,160
-utag_main,Performance,3504,2401,3465,734,4189,19062,10
-usy46gabsosd,Performance,257,158,268,28,21,50369,275
+utag_main,Performance,3524,2410,3485,734,4209,18963,10
+_scid,Targeting/Advertising,1867,1734,2229,569,2795,392,3
 sid,Strictly Necessary,95104,5489,8471,120099,114821,335051,13750
+xsrf-token,Strictly Necessary,4928,4176,5125,2422,3177,1488474,4370
 m-b,Functionality,590,2,1,593,594,3343,0
 session_token,Strictly Necessary,92,91,90,4,88,7189,6
 s_sess,Performance,3086,2070,2933,697,267,2333103,3363
 s_pers,Performance,3156,1891,2610,1356,3952,3398,14
-__cf_bm,Strictly Necessary,3843,1305,951,4390,5341,216469,0
-csrftoken,Strictly Necessary,5650,1587,1657,10127,11278,1842529,506
 sp_ab,Functionality,855,1,6,851,857,29,0
 sp_landing,Functionality,1294,4,9,1844,1852,1,1
-sp_t,Functionality,1327,3,7,1326,1333,60,0
+sp_t,Functionality,1333,3,7,1332,1339,60,0
 __utmb,Performance,68057,62526,68265,26340,93538,8165,1067
 __utmz,Performance,69645,63510,69612,40515,108405,686,1722
 __utma,Performance,84856,63289,69348,71518,139221,1156,1645
-__utmt,Performance,15620,13049,15868,5140,20993,1233897,15
+__utmt,Performance,15665,13087,15907,5147,21039,1233897,15
 __utmc,Performance,67079,62694,68212,23286,816,647979,90682
-s_pv,Performance,965,710,921,117,1038,53565,0
-_parsely_visitor,Functionality,843,604,724,182,902,422,4
-_parsely_session,Functionality,829,581,701,197,894,1,4
-__cfruid,Strictly Necessary,3613,3480,2390,3347,0,0,5737
-kampyle_userid,Functionality,490,484,528,346,874,363,0
-criteo,Targeting/Advertising,2408,40,134,3725,3825,13432,34
+has_js,Functionality,7860,8283,8568,998,415,262816,9151
+s_pv,Performance,980,724,937,117,1054,53565,0
+_parsely_visitor,Functionality,844,605,725,182,903,422,4
+_parsely_session,Functionality,830,582,702,197,895,1,4
+uid,Performance,61085,2522,2609,136415,136706,201492,2318
+__cfruid,Strictly Necessary,3625,3495,2401,3358,0,0,5759
+atuserid,Performance,307,272,414,411,825,406,0
+ckns_policy_exp,Functionality,42,2,7,39,46,391,0
+ckns_orb_fig_cache,Functionality,42,2,5,48,53,4,0
+ckns_policy,Functionality,69,4,11,63,74,345,0
+visitor,Functionality,1956,462,21068,2018,3077,785290,20009
+kampyle_userid,Functionality,491,485,528,347,875,363,0
+criteo,Targeting/Advertising,2409,40,134,3727,3827,13424,34
+_sp_,Functionality,2107,2134,2522,1266,3454,52293,334
+sessionid,Strictly Necessary,8084,2012,3318,7871,4450,578546,6739
+ajs_anonymous_id,Functionality,2587,1567,2240,811,2827,2548,224
 bblastactivity,Functionality,1631,1472,1520,363,1866,373,17
 bbsessionhash,Functionality,1532,1446,1446,309,37,559,1718
 uuid,Targeting/Advertising,22188,802,2475,42862,40323,229959,5014
+vuid,Functionality,9345,204,364,9731,9912,6898,183
 bf_visit,Targeting/Advertising,76,43,75,2,77,10000,0
 fly_geo,Targeting/Advertising,93,11,22,82,83,116599,21
+bmuid,Functionality,43,28,43,3,46,363,0
+s_vi,Performance,17488,3906,4967,18613,23535,280686,45
+ts_uid,Functionality,77,70,63,16,53,3237,26
 _csrf_token,Strictly Necessary,146,100,108,63,15,194580,156
-__auc,Targeting/Advertising,1773,465,507,1398,1905,2068,0
-__asc,Targeting/Advertising,1746,464,507,1367,1874,485794,0
-rxvt,Performance,1871,1572,2096,604,264,2914768,2436
 s_dfa,Performance,528,307,511,68,557,1,22
-browserid,Functionality,1454,39,204,1428,1628,36138,4
-eupubconsent,Strictly Necessary,1021,884,1072,83,1155,23221,0
-uid,Performance,61085,2522,2609,136415,136706,201492,2318
-_mcid,Strictly Necessary,507,4,9,505,514,1937655,0
+rxvt,Performance,1878,1574,2103,604,264,2914768,2443
+eupubconsent,Strictly Necessary,1023,886,1074,83,1157,23195,0
+device_view,Functionality,397,252,170,312,481,65677,1
+v,Targeting/Advertising,14625,422,541,17728,17967,177825,302
+bid,Strictly Necessary,727,184,200,898,835,303351,263
+g,Targeting/Advertising,3195,352,831,3325,3839,640807,317
+sp,Targeting/Advertising,3571,237,18664,4539,22714,67525,489
+eblang,Functionality,358,12,131,251,382,38703,0
+mgrefby,Targeting/Advertising,432,12,154,307,459,7052,2
+mgref,Targeting/Advertising,489,13,162,362,522,6322,2
+s_ppvl,Performance,2954,2260,4762,1420,3098,2828876,3084
+s_lv,Performance,1738,1376,1691,445,2125,31792,11
+usprivacy,Strictly Necessary,484,307,379,516,735,5177,160
+s_ppv,Performance,5108,3690,6852,1987,3515,1635388,5324
+aam_uuid,Targeting/Advertising,3091,3009,5267,1629,6893,53285,3
+s_lv_s,Performance,1346,1043,1305,243,1525,813488,23
+_zm_ssid,Functionality,11,1,2,9,1,0,10
+_mcid,Strictly Necessary,509,4,9,507,516,1930131,0
 _cs_n,Targeting/Advertising,402,324,424,13,94,0,343
 ctm,Strictly Necessary,294,173,266,48,306,10141,8
-aam_uuid,Targeting/Advertising,3064,2989,5242,1625,6864,53685,3
-s_lv_s,Performance,1330,1028,1288,243,1508,813488,23
-s_lv,Performance,1723,1362,1675,445,2109,32054,11
-visitor_id,Targeting/Advertising,2763,3392,4215,4633,7923,56002,925
-s_ppv,Performance,5108,3690,6852,1987,3515,1635388,5324
+ajs_group_id,Targeting/Advertising,2611,1549,2098,745,2838,1536,5
+_gd,Functionality,1735,1369,76247,708,992,181584,75963
+_biz_uid,Performance,595,397,574,111,685,368,0
+_biz_sid,Performance,588,391,570,98,668,1,0
+ajs_user_id,Targeting/Advertising,2409,1413,1885,742,2621,1633,6
 s_ivc,Performance,457,425,471,17,488,1,0
 language,Functionality,4557,3297,3704,2360,3407,376322,2657
-jsessionid,Strictly Necessary,44663,24372,82368,39509,2009,512693,119868
-atuserid,Performance,304,271,413,409,822,406,0
-ckns_policy_exp,Functionality,41,2,7,38,45,391,0
-ckns_orb_fig_cache,Functionality,40,2,5,46,51,4,0
-ckns_policy,Functionality,68,4,11,62,73,345,0
-_chorus_geoip_continent,Targeting/Advertising,54,43,40,24,64,76706,0
-s_visit,Performance,568,378,599,85,668,2057541,16
-s_ppvl,Performance,2950,2258,4758,1420,3098,2828876,3080
-s_invisit,Performance,2748,2047,2674,463,3112,1192475,25
+s_invisit,Performance,2751,2047,2677,463,3115,1192475,25
 s_vnum,Performance,2835,2057,2660,673,3304,18423,29
-has_js,Functionality,7860,8283,8568,998,415,262816,9151
+_session_id2,Strictly Necessary,18,1,1,17,14,1,4
+sto-id-editor,Targeting/Advertising,137,1,8,194,0,0,202
+_chorus_geoip_continent,Targeting/Advertising,54,43,40,24,64,76706,0
+s_visit,Performance,602,401,633,85,702,2057541,16
 s_nr,Performance,3518,2176,3253,999,4178,12709,74
-ss,Targeting/Advertising,3095,87,208,3200,2313,7884,1095
-_scid,Targeting/Advertising,1862,1731,2224,569,2790,392,3
+_shopify_fs,Performance,1523,1598,2879,1640,4263,2480,256
+_shopify_s,Performance,1591,1740,3037,1783,4519,291475,301
+_shopify_y,Performance,1625,1729,2687,1858,4234,3524,311
+_y,Performance,1562,1650,3140,2126,4972,2654,294
+_s,Performance,2179,1706,3373,2575,5595,102833,353
+_sdsat_traffic_source,Performance,695,712,795,95,0,0,890
+_sdsat_pages_viewed,Performance,698,714,798,97,0,0,895
+_sdsat_landing_page,Performance,697,711,799,95,0,0,894
+_sdsat_session_count,Performance,700,715,798,95,891,7318,2
+_sdsat_lt_pages_viewed,Performance,695,713,799,94,892,7319,1
 clientuuid,Targeting/Advertising,1,2,16,0,0,0,16
-ci_session,Strictly Necessary,1941,2330,1369,1553,2802,137774,120
-ajs_anonymous_id,Functionality,2576,1562,2232,808,2816,2557,224
-_sp_,Functionality,2107,2134,2522,1266,3454,52293,334
-_pinterest_sess,Functionality,4488,16,16,4858,4873,204182,1
-sp,Targeting/Advertising,3567,236,18663,4536,22711,67534,488
-ab,Targeting/Advertising,9975,186,269,12462,10634,58997,2097
+s_sq,Performance,5911,3722,5549,1553,590,2857435,6512
+__cf_bm,Strictly Necessary,3843,1305,951,4390,5341,216469,0
+ci_session,Strictly Necessary,1944,2333,1371,1554,2804,137774,121
+i18next,Functionality,399,348,293,312,128,381,477
+sat_track,Functionality,1590,1563,2052,352,1122,14101,1282
+ab,Targeting/Advertising,10017,186,269,12504,10676,58750,2097
+__utmzzses,Targeting/Advertising,277,236,273,33,7,2914914,299
+new_visitor,Functionality,77,73,6359,183,6541,16870,1
+csrf_token,Strictly Necessary,175,131,3310,89,70,231718,3329
+cid,Targeting/Advertising,7672,612,705,9957,9989,288443,673
 ssid,Targeting/Advertising,47737,606,912,70481,69547,523528,1846
+mid,Functionality,2812,109,133,8710,8810,2335951,33
+location_data,Functionality,80,70,5191,88,0,0,5279
+__stripe_sid,Functionality,1590,1420,1386,351,1737,832738,0
+__stripe_mid,Functionality,1593,1419,1388,353,1741,7267,0
 wordpress_google_apps_login,Functionality,205,203,223,17,14,167,226
+ki_t,Performance,949,954,1143,492,1635,4934,0
+ki_r,Performance,792,878,1069,399,1468,4634,0
 amp-access,Strictly Necessary,32,18,32,1,33,358,0
 __qca,Targeting/Advertising,16436,7747,8736,15255,23930,3591,61
 dwsid,Strictly Necessary,861,858,1015,206,0,0,1221
-dwanonymous_,Targeting/Advertising,1019,1019,1113,237,1346,51350,4
-__cq_dnt,Functionality,1013,1005,1018,229,8,90,1239
-cqcid,Performance,899,885,915,205,7,2914809,1113
+__cq_dnt,Functionality,1017,1009,1022,229,8,90,1243
+cqcid,Performance,902,888,918,205,7,2914809,1116
+dwanonymous_,Targeting/Advertising,1023,1023,1117,237,1350,51194,4
 dwac_XXXXX,Targeting/Advertising,686,673,675,70,8,729,737
-nid,Targeting/Advertising,39778,458,472,43395,43773,100726,94
+session_seen_posts,Functionality,1,1,1,0,1,0,0
 s_nr30,Performance,484,461,496,26,519,29,3
-tp,Performance,1219,517,974,992,1014,1179260,952
 __utmt_,Performance,303,171,197,129,326,1,0
 __utmv,Performance,21527,9088,10336,16075,26281,464,130
-__stripe_sid,Functionality,1587,1417,1383,351,1734,832738,0
-__stripe_mid,Functionality,1590,1416,1385,353,1738,7279,0
+geocountry,Targeting/Advertising,65,19,18,51,16,61,53
 aw,Targeting/Advertising,40176,51102,218978,86360,211902,262862,93436
 dt,Performance,20244,241,3579,20662,20505,20404,3736
-_gd,Functionality,1715,1352,75326,706,985,182645,75047
-bmuid,Functionality,43,28,43,3,46,363,0
-visitor,Functionality,1954,462,21067,2017,3075,786317,20009
-_dy_df_geo,Targeting/Advertising,328,331,449,19,468,123449,0
-_dy_geo,Targeting/Advertising,327,329,444,19,463,124258,0
-exp_csrf_token,Strictly Necessary,231,233,246,33,279,1457410,0
+tp,Performance,1228,524,982,993,1015,1177914,960
+___utmvc,Functionality,3632,3515,3548,661,4209,2914860,0
+frontend,Strictly Necessary,4699,4860,5763,3084,8447,1033362,400
+dw_cookies_accepted,Strictly Necessary,189,175,198,9,18,493,189
+dw,Strictly Necessary,3380,1297,198238,3312,3533,800752,198017
+addevent_track_cookie,Targeting/Advertising,85,88,3209,34,3243,355,0
+exp_csrf_token,Strictly Necessary,232,233,247,33,280,1457410,0
 exp_tracker,Performance,996,950,958,148,2,0,1104
 exp_last_activity,Performance,1046,969,964,209,1167,32939,6
-exp_last_visit,Performance,1018,960,942,197,1133,13268,6
-___utmvc,Functionality,3604,3489,3522,657,4179,2914860,0
+exp_last_visit,Performance,1019,960,943,197,1134,13257,6
 pid,Functionality,15721,588,628,19137,18967,371322,798
-geoip,Functionality,208,106,191,145,107,269364,229
-_biz_sid,Performance,587,390,569,98,667,1,0
-_biz_uid,Performance,594,396,573,111,684,368,0
-sessionid,Strictly Necessary,8084,2012,3318,7871,4450,578546,6739
+_okac,Functionality,168,166,172,43,0,0,215
+_okla,Functionality,160,159,165,43,0,0,208
+_ok,Strictly Necessary,634,620,649,171,2,0,818
+olfsk,Strictly Necessary,697,646,669,230,898,720,1
+_oklv,Strictly Necessary,667,654,678,219,2,0,895
+_okbk,Functionality,639,626,652,188,5,0,835
+hblid,Functionality,701,661,680,242,921,719,1
+wcsid,Strictly Necessary,789,650,675,344,156,3549,863
 geo_city,Targeting/Advertising,15,9,8,7,15,30,0
-_cb_svref,Functionality,2681,2683,2712,1807,4519,1,0
+_cb_svref,Functionality,2684,2684,2714,1810,4524,1,0
 _chartbeat2,Performance,3975,3843,3877,2281,6150,277,8
-s_sq,Performance,5911,3722,5549,1553,590,2857435,6512
-_cb_ls,Performance,2806,2790,2825,1770,4595,380,0
-_cb,Unknown,2692,2697,2748,1760,4508,389,0
-_session_id,Strictly Necessary,1371,747,647,870,717,279669,800
-_shopify_sa_t,Performance,1452,1497,2815,1727,4290,224212,252
-_shopify_fs,Performance,1516,1592,2871,1640,4255,2484,256
-_s,Performance,2172,1700,3365,2575,5587,102833,353
-_landing_page,Performance,1484,1488,1468,147,1615,194268,0
-_shopify_sa_p,Performance,1458,1594,2979,2269,5015,161931,233
-_shopify_s,Performance,1584,1732,3026,1783,4508,291475,301
-secure_customer_sig,Strictly Necessary,1525,1512,1500,96,1596,10983,0
-_orig_referrer,Strictly Necessary,1503,1504,1480,152,1632,200445,0
-_shopify_y,Performance,1617,1691,2641,1858,4188,3535,311
-_y,Performance,1554,1612,3095,2126,4927,2653,294
-__utmzzses,Targeting/Advertising,275,235,271,33,6,2914914,298
-__cflb,Strictly Necessary,2726,337,225,4316,4541,153169,0
-s_cm,Performance,509,430,507,175,177,1457327,505
-location_data,Functionality,80,70,5191,88,0,0,5279
-gpv,Performance,332,238,343,89,432,485748,0
+_cb,Unknown,2694,2698,2750,1762,4512,389,0
+_cb_ls,Performance,2808,2791,2826,1773,4599,380,0
+cftoken,Strictly Necessary,2568,2204,2148,1510,2610,91522,1048
+cfid,Strictly Necessary,2570,2202,2149,1496,2617,92640,1028
+_session_id,Strictly Necessary,1376,751,651,871,722,277208,800
+loc,Targeting/Advertising,14334,93,284,14294,14222,11487,356
+__cflb,Strictly Necessary,2758,338,226,4352,4578,151126,0
+_dy_geo,Targeting/Advertising,329,331,447,19,466,123449,0
+_dy_df_geo,Targeting/Advertising,330,333,452,19,471,122650,0
+_shopify_sa_t,Performance,1459,1503,2823,1727,4298,224212,252
+_landing_page,Performance,1491,1527,1513,147,1660,188875,0
+_shopify_sa_p,Performance,1465,1600,2987,2269,5023,161931,233
+secure_customer_sig,Strictly Necessary,1531,1518,1506,98,1604,10964,0
+_orig_referrer,Strictly Necessary,1513,1543,1525,152,1677,194962,0
+s_cm,Performance,510,430,508,175,177,1457327,506
+access_token,Strictly Necessary,585,146,173,544,708,1463663,9
+random_id,Performance,11,5,12,6,17,6663,1
+geo_ip_country,Targeting/Advertising,3,2,3,0,1,0,2
+gpv,Performance,333,238,343,90,433,485748,0
+dwsecuretoken_,Strictly Necessary,730,710,738,162,1,1,899
 disqus_unique,Functionality,1147,2,3,1144,1144,3311,3
 __jid,Functionality,1285,465,446,945,1100,6,291
-bid,Strictly Necessary,726,184,200,897,834,303788,263
+eloqua,Functionality,2949,537,898,2831,3692,301987,37
+mage-translation-storage,Functionality,828,858,25078,139,40,1,25177
 cb,Performance,818,12,9,878,884,91256,3
-ajs_group_id,Targeting/Advertising,2602,1544,2092,742,2829,1540,5
-ajs_user_id,Targeting/Advertising,2401,1408,1880,739,2613,1637,6
-bcookie,Targeting/Advertising,14871,96,122,15690,15810,93331,2
+wts,Strictly Necessary,22,1,0,22,22,6,0
+ahoy_visitor,Functionality,276,141,107,217,324,319804,0
 spuid,Strictly Necessary,125,79,43,158,200,317968,1
 _calendly_session,Functionality,109,1,0,112,108,29168,4
-csrf_token,Strictly Necessary,175,131,3310,89,70,231718,3329
-cid,Targeting/Advertising,7672,612,705,9957,9989,288443,673
-g,Targeting/Advertising,3193,352,831,3323,3837,641151,317
-mgref,Targeting/Advertising,488,13,162,361,521,6333,2
-eblang,Functionality,358,12,131,251,382,38703,0
-ipe_s,Functionality,396,418,474,187,0,0,661
+_sess,Strictly Necessary,120,121,137,69,204,722,2
+_br_uid_2,Functionality,178,135,171,13,180,36498,4
+firsttime,Functionality,63,50,140,19,61,88246,98
+__cq_uuid,Performance,805,616,1195,27,1222,288,0
+cloudfront_viewer_country,Functionality,24,2,3,22,24,538,1
 _country,Targeting/Advertising,14,20,13,10,19,171688,4
-ai_session,Performance,2351,2258,2195,1954,4142,1001972,7
-ai_user,Performance,2407,2281,2255,1490,3745,31727,0
-cfid,Strictly Necessary,2565,2198,2145,1495,2613,92793,1027
-cftoken,Strictly Necessary,2563,2200,2144,1509,2606,91674,1047
 _ems_visitor,Targeting/Advertising,28,27,28,0,0,0,28
 _ems_session,Targeting/Advertising,28,27,28,0,27,0,1
 geo_region,Targeting/Advertising,12,11,14,1,12,728878,3
 geo_country,Targeting/Advertising,31,31,31,6,11,954,26
-ki_r,Performance,791,877,1067,398,1465,4640,0
-ki_t,Performance,948,953,1141,491,1632,4940,0
+referrer,Functionality,1085,640,9333,420,5635,24648,4118
 has_seen_cookie_banner,Functionality,3,2,2,1,3,6087,0
-liveagent_ptid,Functionality,1141,1198,1392,908,2300,29141,0
-liveagent_sid,Functionality,1137,1196,1387,955,343,2914627,1999
-_oklv,Strictly Necessary,666,653,677,219,2,0,894
-_okbk,Functionality,639,626,652,188,5,0,835
-_ok,Strictly Necessary,633,619,648,171,2,0,817
-olfsk,Strictly Necessary,696,645,668,230,897,720,1
-hblid,Functionality,700,660,679,242,920,719,1
-wcsid,Strictly Necessary,788,649,674,344,156,3549,862
-device_view,Functionality,395,250,168,312,479,65974,1
-_br_uid_2,Functionality,178,135,171,13,180,36498,4
-_uid,Functionality,2845,97,92,2945,3031,30250,6
-dpm_url_count,Targeting/Advertising,76,77,84,36,0,0,120
-ahoy_visitor,Functionality,275,141,107,216,323,320952,0
-referrer,Functionality,1084,640,9332,420,5635,24648,4117
+georegion,Targeting/Advertising,6,5,4,2,5,3517,1
+wisepops_visits,Targeting/Advertising,202,142,202,9,211,1170,0
+wisepops,Targeting/Advertising,209,156,211,15,226,28572,0
+wisepops_session,Targeting/Advertising,205,152,207,14,6,0,215
+click_mobile,Strictly Necessary,194,123,108,190,286,204358,12
+_uid,Functionality,2847,97,92,2947,3033,30228,6
 oo_inv_hit,Functionality,54,42,50,20,12,0,58
 oo_inv_percent,Functionality,55,41,49,22,12,0,59
-__cq_uuid,Performance,802,615,1192,27,1219,288,0
-dwsecuretoken_,Strictly Necessary,729,709,737,162,1,1,898
-dw_cookies_accepted,Strictly Necessary,189,175,198,9,18,493,189
-dw,Strictly Necessary,3372,1288,198216,3311,3532,800752,197995
 session_start_time,Functionality,149,113,141,18,4,6213,155
-nmstat,Performance,1129,1166,1240,69,1293,3327,16
-wisepops_visits,Targeting/Advertising,200,140,200,9,209,1174,0
-wisepops,Targeting/Advertising,207,154,209,15,224,28833,0
-wisepops_session,Targeting/Advertising,203,150,205,14,6,0,213
-gpv_v100,Functionality,14,9,14,1,15,1,0
-preferences,Functionality,75,42,177,28,183,34449,22
-__unam,Functionality,4739,3812,4354,1205,5548,3727,11
-s_nr2,Functionality,72,45,67,13,80,271,0
-testcookie,Strictly Necessary,2243,631,11057,1905,338,34055,12624
-_gumroad_guid,Performance,9,1,0,9,9,3642,0
-_gali,Functionality,505,454,542,25,565,0,2
-addevent_track_cookie,Targeting/Advertising,85,88,3204,32,3236,355,0
-cart_ts,Strictly Necessary,358,355,359,13,372,13,0
-cart_sig,Strictly Necessary,1503,1490,1478,92,1570,3843,0
-cart,Strictly Necessary,587,564,596,32,580,121926,48
-_icl_current_language,Strictly Necessary,982,1027,1604,384,1985,52249,3
-ev_sync_dd,Targeting/Advertising,2078,3,5,2100,2100,222152,5
-_jsuid,Performance,1454,1318,1303,320,1620,8116,3
-_sess,Strictly Necessary,120,121,137,69,204,722,2
-__zlcmid,Functionality,1809,1459,1797,66,1862,3548,1
-vuid,Functionality,9326,204,364,9712,9893,6910,183
-v,Targeting/Advertising,14625,422,541,17728,17967,177825,302
-sat_track,Functionality,1590,1563,2050,351,1120,14127,1281
-mid,Functionality,2812,109,133,8710,8810,2335951,33
-id,Targeting/Advertising,60944,1853,1051,75558,76220,83136,389
-euconsent,Strictly Necessary,1161,388,591,794,1319,253147,66
-frontend,Strictly Necessary,4699,4860,5763,3084,8447,1033362,400
-mage-translation-storage,Functionality,824,854,24984,139,40,1,25083
-campaignid,Targeting/Advertising,60,53,49,20,44,583264,25
-_secure_session_id,Strictly Necessary,117,118,114,6,99,1,21
-_mfuuid_,Performance,28,28,28,18,46,364,0
-yumpu_slc,Targeting/Advertising,97,3,3,95,98,6,0
-ypsession,Targeting/Advertising,98,4,4,95,98,41056,1
-pll_language,Functionality,1232,1194,1420,119,1534,47242,5
-loc,Targeting/Advertising,14320,92,279,14280,14208,11498,351
-section_data_ids,Functionality,652,685,670,83,485,1,268
-mage-cache-storage,Functionality,911,954,941,132,744,1,329
-mage-cache-storage-section-invalidation,Functionality,912,955,939,131,746,1,324
 private_content_version,Functionality,250,253,255,7,259,26145,3
-form_key,Functionality,940,947,1566,137,1253,1523178,450
-__gfp_64b,Strictly Necessary,552,448,524,155,672,990,7
-__insp_targlpu,Performance,481,410,437,78,515,6198,0
-__insp_slim,Performance,508,427,461,84,545,358,0
-__insp_wid,Performance,508,428,460,84,542,358,2
-__insp_targlpt,Performance,484,411,440,79,519,6163,0
-__insp_nv,Performance,518,437,469,84,543,5898,10
-__insp_norec_sess,Performance,419,343,375,67,442,7182,0
+sts,Strictly Necessary,44,40,37,10,46,324691,1
+customer,Strictly Necessary,572,529,614,52,567,1995216,99
+pll_language,Functionality,1236,1198,1424,119,1538,47117,5
+preferences,Functionality,75,42,177,28,183,34449,22
+cookie_accepted,Strictly Necessary,9,9,8,1,9,729329,0
+mc,Targeting/Advertising,17472,41,50,19550,19565,214457,35
+cart_sig,Strictly Necessary,1509,1496,1484,94,1578,3823,0
+cart_ts,Strictly Necessary,362,359,363,13,376,13,0
+cart,Strictly Necessary,591,568,600,32,584,120916,48
+atidvisitor,Performance,528,538,682,548,1230,179,0
+s_nr2,Functionality,72,45,67,13,80,271,0
+_v__chartbeat3,Performance,576,388,366,539,905,387,0
+ai_session,Performance,2367,2274,2211,1964,4168,1001972,7
+ai_user,Performance,2424,2299,2272,1503,3775,31469,0
+_jsuid,Performance,1457,1321,1306,320,1623,8101,3
+mp__utmz,Functionality,138,133,155,4,159,190,0
+mp__utmc,Functionality,139,135,156,6,11,730,151
+mp__utmb,Functionality,139,136,162,7,169,2914898,0
+mp__utma,Functionality,125,124,142,5,147,720,0
+test,Performance,7591,4845,13839,3987,3565,1157060,14261
+s_vnc365,Performance,418,391,429,16,445,364,0
+geolocation,Targeting/Advertising,114,71,87,45,113,178648,19
+__zlcmid,Functionality,1813,1462,1801,66,1866,3541,1
+id,Targeting/Advertising,60944,1853,1051,75558,76220,83136,389
+bblastvisit,Functionality,1589,1467,1478,354,1815,369,17
 wishlist,Functionality,18,18,16,2,13,364499,5
-_sdsat_pages_viewed,Performance,698,714,798,97,0,0,895
-_sdsat_session_count,Performance,700,715,798,95,891,7318,2
-_sdsat_traffic_source,Performance,695,712,795,95,0,0,890
-_sdsat_lt_pages_viewed,Performance,695,713,799,94,892,7319,1
-_sdsat_landing_page,Performance,697,711,799,95,0,0,894
-w3tc_referrer,Performance,1484,1543,1470,171,0,0,1641
-consent,Targeting/Advertising,2899,1452,284,6114,6368,1459400,30
-wpml_browser_redirect_test,Functionality,338,336,11804,27,0,0,11831
-_lo_v,Functionality,181,166,177,7,184,353,0
-_lorid,Targeting/Advertising,167,161,167,2,169,0,0
-__lotl,Targeting/Advertising,177,166,176,3,179,172,0
+_we_wk_ss_lsf_,Targeting/Advertising,13,16,15,1,0,0,16
+consent,Targeting/Advertising,2910,1453,285,6124,6379,1456889,30
 ecm,Functionality,294,315,313,65,9,486401,369
-wordpress_test_cookie,Strictly Necessary,3124,2939,3359,151,18,1360271,3492
-muidn,Functionality,421,18,7,666,309,92814,364
+peerius_user,Functionality,99,126,91,47,138,7195,0
 peerius_ct,Functionality,67,97,64,35,99,0,0
 peerius_sess,Functionality,95,125,89,43,132,1,0
-peerius_rid,Functionality,63,93,60,34,94,0,0
-peerius_user,Functionality,99,126,91,47,138,7195,0
-customer,Strictly Necessary,572,529,614,52,567,1995216,99
-seg_xid,Performance,64,25,61,22,79,530247,4
-em_cdn_uid,Unknown,875,416,403,707,1110,361,0
-kuid,Targeting/Advertising,71,12,18,57,57,107068,18
-f5_cspm,Strictly Necessary,2497,295,23407,7086,5,0,30488
-bblastvisit,Functionality,1589,1467,1478,354,1815,369,17
+wpml_browser_redirect_test,Functionality,340,338,11806,27,0,0,11833
+anon,Targeting/Advertising,1209,91,475,1241,1610,2062,106
+__unam,Functionality,4739,3812,4354,1205,5548,3727,11
+sess,Functionality,35254,113,149,35253,35249,205,153
+wwsgd_visits,Functionality,144,146,150,11,161,361,0
+section_data_ids,Functionality,656,690,674,90,496,1,268
+mage-cache-storage-section-invalidation,Functionality,922,965,948,133,757,1,324
+form_key,Functionality,949,956,1576,141,1262,1503396,455
+mage-cache-storage,Functionality,921,964,950,134,755,1,329
+s1,Performance,5002,300,322,5127,5410,2667,39
+wordpress_test_cookie,Strictly Necessary,3124,2939,3359,151,18,1360271,3492
 test_cookie,Targeting/Advertising,64778,188,390,65558,65724,2672510,224
-bf_lead,Targeting/Advertising,72,42,73,0,73,358,0
-_wingify_pc_uuid,Performance,174,178,176,125,301,9998,0
-geolocation,Targeting/Advertising,114,71,87,45,113,178648,19
-km_ai,Performance,793,412,512,377,878,1796,11
-km_lv,Performance,794,413,510,376,875,1794,11
-kvcd,Targeting/Advertising,575,354,500,167,3,0,664
-km_vs,Targeting/Advertising,540,367,454,108,552,1,10
-_br_uid_1,Functionality,44,43,42,5,45,36497,2
+cb-enabled,Strictly Necessary,513,511,3803,75,600,25397,3278
 _gauges_unique_year,Performance,204,169,162,77,238,352,1
-_gauges_unique_month,Unknown,185,165,158,62,219,28,1
-_gauges_unique,Performance,204,170,161,83,243,2685,1
-_gauges_unique_day,Performance,169,165,157,42,198,1,1
 _gauges_unique_hour,Performance,164,163,155,37,191,1,1
-_gauges_cookie,Performance,52,57,46,36,81,0,1
-mc,Targeting/Advertising,17472,41,50,19550,19565,214457,35
-bv_segment,Strictly Necessary,29,29,30,9,39,930,0
-wingify_donot_track_actions,Performance,127,129,131,54,185,9994,0
-cb-enabled,Strictly Necessary,512,510,3802,75,599,25439,3278
-_mkto_datetime,Targeting/Advertising,3,4,10,0,2,183,8
+_gauges_unique,Performance,204,170,161,83,243,2685,1
+_gauges_unique_month,Unknown,185,165,158,62,219,28,1
+_gauges_unique_day,Performance,169,165,157,42,198,1,1
+_br_uid_1,Functionality,44,43,42,5,45,36497,2
+__gfp_64b,Strictly Necessary,552,448,524,155,672,990,7
+sto-id-47873,Targeting/Advertising,100,64,64,79,108,48206,35
+_mfuuid_,Performance,28,28,28,18,46,364,0
+_pointillist_session_id,Strictly Necessary,12,4,13,1,14,2915090,0
 visit_uuid,Targeting/Advertising,208,209,210,194,7,184,397
 _fby_site_,Performance,129,105,130,2,132,258,0
-cookies,Strictly Necessary,168,165,6534,23,3211,2955,3346
-_we_wk_ss_lsf_,Targeting/Advertising,13,16,15,1,0,0,16
-test,Performance,7569,4835,13819,3980,3561,1157060,14238
-campaign_id,Targeting/Advertising,221,58,91,396,486,29,1
-cloudfront_viewer_country,Functionality,24,2,3,22,24,538,1
-_rtfl_s_handshake_guid,Performance,59,62,79,33,112,3652,0
-exid,Targeting/Advertising,81,4,4,77,80,306,1
-cuvid,Functionality,226,183,199,47,246,12621,0
-cusid,Performance,367,348,505,148,653,2914543,0
-cuvon,Functionality,272,230,246,54,300,2914543,0
-i18next,Functionality,399,348,293,312,128,381,477
-zarget_visitor_info,Performance,108,82,101,24,125,364,0
-bb_lastactivity,Functionality,1347,1245,1253,241,1492,2337,2
-bb_lastvisit,Functionality,1303,1230,1216,231,1445,362,2
-bb_sessionhash,Functionality,1289,1223,1221,205,33,364492,1393
-vsettings,Functionality,133,132,131,4,134,44181,1
-_actms,Targeting/Advertising,27,21,34,0,34,1,0
-_actmu,Targeting/Advertising,28,21,35,0,35,364,0
-s_ev21,Performance,47,13,44,3,45,831,2
-s_vnc365,Performance,418,391,429,16,445,364,0
-lc_window_state,Functionality,311,288,314,8,2,3650,320
-cto_lwid,Functionality,2985,2519,2877,335,3203,6655,9
-criteo_write_test,Targeting/Advertising,2928,2888,3233,1800,5029,2914817,4
-_okac,Functionality,167,165,171,43,0,0,214
-_okla,Functionality,159,158,164,43,0,0,207
-__zlcid,Functionality,752,45,29,737,766,361,0
-ouid,Targeting/Advertising,5887,60,55,6721,6087,72858,689
-user_country_message,Functionality,52,1,0,52,0,0,52
-aelia_cs_selected_currency,Functionality,18,18,23,1,24,132499,0
-zarget_user_id,Performance,50,36,45,14,59,364,0
-sess,Functionality,35254,113,149,35253,35249,205,153
-ipc_geo,Targeting/Advertising,60,40,50,17,0,0,67
-ki_u,Functionality,609,532,537,191,728,9029,0
-ki_s,Targeting/Advertising,372,416,445,82,527,9096,0
-siteid,Strictly Necessary,230,129,158,107,105,527606,160
 googtrans,Functionality,107,96,6547,63,54,441647,6556
+_icl_current_language,Strictly Necessary,982,1027,1604,384,1985,52249,3
+lvts,Strictly Necessary,67,38,51,119,170,20690,0
+tk_ai,Targeting/Advertising,519,515,537,16,159,1819,394
+lc_window_state,Functionality,311,288,314,8,2,3650,320
+nmuid,Functionality,3,3,0,3,3,2916913,0
+exid,Targeting/Advertising,81,4,4,77,80,306,1
+zarget_visitor_info,Performance,110,83,103,24,127,364,0
+dl_geo,Targeting/Advertising,1,1,1,0,0,0,1
+_guid,Performance,13,8,11,7,17,530708,1
+s_ev21,Performance,47,13,44,3,45,831,2
+cookies,Strictly Necessary,168,165,6534,23,3211,2955,3346
+_okgid,Functionality,196,62,69,146,174,0,41
+ipc_geo,Targeting/Advertising,60,40,50,17,0,0,67
+__atuvs,Functionality,9423,9602,12015,6626,18633,2914599,8
+__atuvc,Functionality,12510,12524,14829,9369,24187,14016,11
 sto-id,Targeting/Advertising,336,333,330,13,337,3637,6
+localization,Functionality,915,39,54,869,922,80601,1
+cuvon,Functionality,274,231,248,54,302,2914543,0
+cusid,Performance,369,349,507,148,655,2914543,0
+km_lv,Performance,794,413,510,376,875,1794,11
+km_vs,Targeting/Advertising,540,367,454,108,552,1,10
+kvcd,Targeting/Advertising,575,354,500,167,3,0,664
+km_ai,Performance,793,412,512,377,878,1796,11
+s_gvo_,Performance,352,344,351,14,0,0,365
+geoip_country_code,Targeting/Advertising,83,54,55,124,6,4532,173
+geoip_country_name,Targeting/Advertising,5,3,2,4,1,30,5
+_pk_ses,Performance,4626,4845,4794,1499,6233,506909,60
+hsid,Targeting/Advertising,47086,274,507,69881,69786,516307,602
+glb_uid,Functionality,18,3,20,7,22,397573,5
+nmstat,Performance,1130,1167,1241,69,1294,3325,16
+i00,Performance,855,25,11,1078,1089,489902,0
+_gauges_cookie,Performance,52,57,46,36,81,0,1
+events,Strictly Necessary,5,5,6,1,2,372,5
+sg_cookies,Strictly Necessary,72,155,209,50,259,88,0
+cbar_uid,Functionality,48,40,43,6,49,579,0
+dpm_url_count,Targeting/Advertising,76,77,84,36,0,0,120
+ff_usvid,Targeting/Advertising,8,9,6,4,0,0,10
+cookies-accepted,Strictly Necessary,26,22,25,4,28,190888,1
+ns_session,Performance,164,152,4398,32,1,0,4429
+ns_cookietest,Performance,166,152,6976,39,1,0,7014
+_eu_cookiepolicy,Functionality,4,4,4,0,4,8800,0
+em_cdn_uid,Unknown,882,418,405,715,1120,361,0
+virtuemart,Strictly Necessary,181,179,211,6,2,2,215
+seen_cookie_message,Functionality,35,34,37,18,55,57599,0
+aelia_cs_selected_currency,Functionality,18,18,23,1,24,132499,0
+woocommerce_items_in_cart,Strictly Necessary,254,257,258,3,15,2915079,246
+woocommerce_cart_hash,Strictly Necessary,256,260,262,2,9,2915079,255
+aelia_billing_country,Functionality,5,5,7,0,0,0,7
+aelia_customer_country,Functionality,8,8,10,0,0,0,10
+global_visit_counter,Targeting/Advertising,562,565,591,27,0,0,618
+ouid,Targeting/Advertising,5895,60,55,6729,6095,72756,689
+sfdc-stream,Strictly Necessary,847,500,479,494,973,409878,0
+fe_typo_user,Functionality,1191,1151,1187,121,24,79,1284
+__csrf_token,Strictly Necessary,17,4,0,29,0,0,29
+auid_tp,Targeting/Advertising,13,5,4,13,17,6715,0
+bb2_screener_,Functionality,355,356,465,51,20,2914918,496
+auid,Targeting/Advertising,2909,73,53,3258,3304,390249,7
+ki_u,Functionality,609,532,537,191,728,9029,0
+campaign_id,Targeting/Advertising,221,58,91,396,486,29,1
