@@ -46,9 +46,7 @@ if RESET:
     df['options_available'] = False
     df['cookie_first'] = [{} for _ in range(len(df))]
     df['cookie_accept'] = [{} for _ in range(len(df))]
-    df['cookie_decline'] = [{} for _ in range(len(df))]
-    df['click_found_a'] = False
-    df['click_found_d'] = False
+    df['click_found'] = False
     df['done'] = False
 
     cols = ['Website', 'Host', 'banner_provider', 'options_available', 'cookie_first',
@@ -461,7 +459,7 @@ def web_opener(index):
     current_time = datetime.now().strftime("%H:%M:%S")
 
     # See if it is already done in earlier runs
-    if (this_site['click_found_a']) & HEADLESS:
+    if (this_site['click_found']) & HEADLESS:
         # print(website, 'already done')
         return 0
 
